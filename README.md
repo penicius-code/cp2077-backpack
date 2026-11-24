@@ -1,7 +1,7 @@
 # Backpack
 
 Use food, drinks, boosters, skill shards, recipes and eddie shards in Cyberpunk 2077 from an overlay list, without the backpack screen that pauses the game. Single-player only.
-Version 1.0.1 | Built on game version 2.31 | Status: 1.0.0 failed its in-game test (items were used by themselves); 1.0.1 fixes that cause and has not been run in game yet
+Version 1.0.1 | Built on game version 2.31 | Status: 1.0.0 failed its in-game test (items were used by themselves); 1.0.1 fixes that cause and is in use in my game and working; no written test record
 
 > This is an unofficial fan work and is not approved/endorsed by CD PROJEKT RED. No game files are included.
 
@@ -74,13 +74,13 @@ Console commands in the CET console: `GetMod("CyberslopBackpack").list()`, `.use
 | Version | Game | Result |
 |---|---|---|
 | 1.0.0 | 2.31 | Failed in game, 2026-11-01: items were used by themselves (45 uses in about one minute). |
-| 1.0.1 | 2.31 | Fix for that cause. Not run in game. An offline mock test with 61 checks passed at the time; that test script was a temporary file and is not part of this repository. |
+| 1.0.1 | 2.31 | Fix for that cause. In use in the author's game and working (author's statement, 2026-11-24). No written test record. An offline mock test with 61 checks passed at the time; that test script was a temporary file and is not part of this repository. |
 
 Not tested on game version 2.5.
 
 ## Known issues
 
-- Version 1.0.1 has never been run in game, so the fix is not confirmed.
+- Version 1.0.1 has no written in-game test record; the fix rests on the author's use in game.
 - Every use and every refused use is written to `CyberslopBackpack.log`. Repeated refusals for the same item are written at most every 2 seconds.
 - Not proven before an in-game run: whether the game's own use-rule check can be called from CET (there is a fallback), and whether the on-screen list really takes no input.
 

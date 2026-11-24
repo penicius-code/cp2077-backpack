@@ -11,7 +11,7 @@ Both versions were built on game version 2.31.
 ### Added
 - Console commands `find` and `restore` to give back items that the 1.0.0 fault used up.
 
-Not run in game.
+In use in the author's game and working; no written test record.
 
 ## 1.0.0 - 2026-11-01
 - First version: overlay window and on-screen list to use backpack items without pausing the game.
