@@ -3,6 +3,8 @@
 Use food, drinks, boosters, skill shards, recipes and eddie shards in Cyberpunk 2077 from an overlay list, without the backpack screen that pauses the game. Single-player only.
 Version 1.0.1 | Built on game version 2.31 | Status: 1.0.0 failed its in-game test (items were used by themselves); 1.0.1 fixes that cause and is in use in my game and working; no written test record
 
+**Download:** [latest release](https://github.com/penicius-code/cp2077-backpack/releases/latest) (zip; install steps below)
+
 > This is an unofficial fan work and is not approved/endorsed by CD PROJEKT RED. No game files are included.
 
 ## The problem
@@ -40,7 +42,7 @@ With Dark Future installed, its rules decide what may be used in combat. Require
 ## Install
 
 1. Install the requirements above.
-2. Copy the contents of `package/` into the game folder, so that `bin\x64\plugins\cyber_engine_tweaks\mods\CyberslopBackpack\init.lua` exists.
+2. Download the zip from the [latest release](https://github.com/penicius-code/cp2077-backpack/releases/latest) (the same files as `package/` in this repository) and extract it into the game folder, so that `bin\x64\plugins\cyber_engine_tweaks\mods\CyberslopBackpack\init.lua` exists.
 3. Start the game, load a save and open the CET overlay: the "Backpack" window lists your usable items.
 
 ## Uninstall / roll back
