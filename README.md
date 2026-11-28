@@ -1,7 +1,7 @@
 # Backpack
 
 Use food, drinks, boosters, skill shards, recipes and eddie shards in Cyberpunk 2077 from an overlay list, without the backpack screen that pauses the game. Single-player only.
-Version 1.0.1 | Built on game version 2.31 | Status: 1.0.0 failed its in-game test (items were used by themselves); 1.0.1 fixes that cause and is in use in my game and working; no written test record
+Version 1.2.2 | For game version 2.5 (1.0.1 was built on 2.31) | Status: 1.0.0 failed its in-game test (items were used by themselves); 1.0.1 fixes that cause and is in use in my game and working; 1.1.0 to 1.2.2 (groups, tabs, effect lines) installed in my game for 2.5, no written test record
 
 **Download:** [latest release](https://github.com/penicius-code/cp2077-backpack/releases/latest) (zip; install steps below)
 
@@ -13,13 +13,13 @@ Eating or drinking through the backpack screen pauses the game and takes several
 
 ## What I built
 
-A Cyber Engine Tweaks script (719 lines of Lua) that lists every item the backpack lets you "Use" and uses one on click, while the game keeps running. It changes: nothing in the game's data. It uses items through the backpack's own path, and it adds an on-screen list that hotkeys can step through with the overlay closed.
+A Cyber Engine Tweaks script (1,138 lines of Lua) that lists every item the backpack lets you "Use" and uses one on click, while the game keeps running. It changes: nothing in the game's data. It uses items through the backpack's own path, and it adds an on-screen list that hotkeys can step through with the overlay closed.
 
 ## How it works
 
 - **Which items.** The same test the backpack uses for its "Use" button: the item has a Consume, Eat, Drink, Learn or DownloadFunds action. Inhalers and injectors are left out, as in the backpack. Stacks of the same item are merged; each item record is classified once and cached.
 - **Using an item.** `ItemActionsHelper.PerformItemAction`, the call the backpack makes. Mods that react to consumed items, such as Dark Future, see the use as usual. A short pause between uses (default 0.6 s) stops a double click from using two.
-- **In the CET overlay.** Window "Backpack" with category, sort and search; click an item to use it. The overlay takes the mouse, so the player stands still while it is open, but the world does not pause.
+- **In the CET overlay.** Window "Backpack" with All and Boosters tabs, items grouped under collapsible headers (Medical, Vices, Drinks, Food, shards), a grey note per row on what the item is for, category, sort and search; click an item to use it. Hovering a row shows the item's effect lines, side effects in red. The overlay takes the mouse, so the player stands still while it is open, but the world does not pause.
 - **With the overlay closed.** Hotkeys show a list and step through it, use the selected item or switch category. The list takes no input, so you keep moving, aiming and driving. It hides in menus and scenes.
 - **Rules.** "Follow the backpack's use rules" asks the game the same question the backpack asks before using an item (in the base game: no consumables in combat; Dark Future replaces that rule with its own). If that call fails from CET, a Lua copy of the base game's combat rule is used. "World checks" also blocks use while carrying a body, during a melee attack or in a fist fight. Use is always blocked with no game loaded, in menus and in scenes.
 - Nothing here changes time dilation.
@@ -33,7 +33,7 @@ package/
 
 | Requirement | Version | Link |
 |---|---|---|
-| Cyberpunk 2077 | built on 2.31; not tested on 2.5 | |
+| Cyberpunk 2077 | 2.5 (1.1.0 and later) | |
 | Cyber Engine Tweaks | a build for your game version | [Nexus Mods, mod 107](https://www.nexusmods.com/cyberpunk2077/mods/107) |
 | Dark Future (optional) | | [Nexus Mods, mod 16300](https://www.nexusmods.com/cyberpunk2077/mods/16300) |
 
@@ -77,8 +77,8 @@ Console commands in the CET console: `GetMod("CyberslopBackpack").list()`, `.use
 |---|---|---|
 | 1.0.0 | 2.31 | Failed in game, 2026-11-01: items were used by themselves (45 uses in about one minute). |
 | 1.0.1 | 2.31 | Fix for that cause. In use in the author's game and working (author's statement, 2026-11-24). No written test record. An offline mock test with 61 checks passed at the time; that test script was a temporary file and is not part of this repository. |
+| 1.1.0 to 1.2.2 | 2.5 | Installed in the author's game; no written in-game test record. Checked with an offline mock test (55 of 55 for 1.2.2) and LuaJIT syntax. |
 
-Not tested on game version 2.5.
 
 ## Known issues
 
@@ -100,7 +100,7 @@ Not tested on game version 2.5.
 
 ## Changelog
 
-See [CHANGELOG.md](CHANGELOG.md). Latest: 1.0.1 (2026-11-01): items are used only on a real click.
+See [CHANGELOG.md](CHANGELOG.md). Latest: 1.2.2 (2026-11-26): items grouped under collapsible headers, All and Boosters tabs, and the hover box shows the item's effect lines.
 
 ## Credits and licence
 

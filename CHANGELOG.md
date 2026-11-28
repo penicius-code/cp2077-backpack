@@ -1,6 +1,31 @@
 # Changelog
 
-Both versions were built on game version 2.31.
+1.0.0 and 1.0.1 were built on game version 2.31; 1.1.0 and later are for 2.5.
+
+## 1.2.2 - 2026-11-26
+### Added
+- Notes and the Medical > Mind and humanity group for the humanity items of Cyberslop Merc Stims; Rejectol's note reads "-15 % humanity damage".
+
+## 1.2.1 - 2026-11-26
+### Added
+- The hover box shows the same effect lines as the inventory tooltip (the item's OnAttach / OnEquip UI data with its numbers filled in), above the flavour text. Lines with a negative number are red, so a side effect like "-40 Energy" stands out before use.
+
+## 1.2.0 - 2026-11-26
+### Added
+- All and Boosters tabs side by side at the top of the window; the Boosters tab shows its count. The All tab leaves boosters out; a search in All still finds them.
+- Notes for the Cyberslop Merc Stims items.
+### Fixed
+- Street drugs that are long-lasting items (Crank, Black Lace and others) landed in the wrong group.
+
+## 1.1.0 - 2026-11-25
+### Added
+- Items grouped under collapsible headers: Medical (clinic cures, injury care, mind and humanity, addiction and recovery, boosters, other medicine), Vices (smokes, alcohol, street drugs, drug-making materials), Drinks, Food (by nutrition tier), other consumables, shards and recipes, eddie shards. Groups come from the item record (tags, consumable base, item type), not from name guessing.
+- A grey note per row on what the item is for; the category box selects a section; search also matches notes and group names.
+- Open / closed state of each header is saved; Options has "Open all groups", "Close all groups" and "Show what each item is for".
+### Changed
+- Sort (Name / Count) applies inside each group. An old config's categories and sort fall back to All and Name.
+
+1.1.0 to 1.2.2 are for game version 2.5. Installed in the author's game; no written test record. Offline mock test: 55 of 55 (1.2.2).
 
 ## 1.0.1 - 2026-11-01
 ### Fixed
